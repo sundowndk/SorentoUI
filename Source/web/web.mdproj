@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{961D37ED-18CC-44F9-8911-048380EEC490}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.</OutputPath>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="build.sh bin/Debug" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="javascript\" />
+    <Folder Include="javascript\modal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="javascript\modal\window.js" />
+    <None Include="javascript\modal\question.js" />
+    <None Include="sorentoui.jsb" />
+    <None Include="build.sh" />
+  </ItemGroup>
+</Project>
