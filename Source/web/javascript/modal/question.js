@@ -77,4 +77,3 @@ question : function (attributes)
 //																											
 //				modalwindow.show ();	
 }	
-}	

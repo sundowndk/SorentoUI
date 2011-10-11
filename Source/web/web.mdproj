@@ -19,11 +19,16 @@
   <ItemGroup>
     <Folder Include="javascript\" />
     <Folder Include="javascript\modal\" />
+    <Folder Include="html\" />
+    <Folder Include="html\sorentoui\" />
+    <Folder Include="html\sorentoui\css\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="javascript\modal\window.js" />
     <None Include="javascript\modal\question.js" />
     <None Include="sorentoui.jsb" />
     <None Include="build.sh" />
+    <None Include="html\sorentoui\css\sorentoui.css" />
+    <None Include="javascript\modal\init.js" />
   </ItemGroup>
 </Project>

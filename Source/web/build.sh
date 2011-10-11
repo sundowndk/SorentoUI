@@ -31,11 +31,11 @@ jsbuilder sorentoui.jsb "$OUTPUTDIR/html/sorentoui/js/"
 ####################################################
 # HTML                                             #
 ####################################################
-#echo "Building HTML..."
-#for file in html/*; do
-#echo $file
-#    cp -rv $file "$OUTPUTDIR/html/"
-#done
+echo "Building HTML..."
+for file in html/*; do
+echo $file
+    cp -rv $file "$OUTPUTDIR/html/"
+done
 
 ####################################################
 # CONTENT                                          #

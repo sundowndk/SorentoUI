@@ -1,0 +1,22 @@
+.Modal
+{
+	position:						absolute;	
+}
+
+
+.ModalWindowShade 
+{
+	position:						absolute;
+	
+	top: 							0px;
+	
+	background-color:					#000000;	
+	
+	cursor: wait;
+}
+
+
+.ModalBoxContent
+{
+
+}

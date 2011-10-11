@@ -45,14 +45,14 @@ window : function (_attributes)
 	function construct ()
 	{		
 		_elements["container"] = SNDK.tools.newElement ("div", "Modal", _id, document.body);	
-		_elements["container"].style.zIndex = 101*sorentoUI.modalDepth;
+		_elements["container"].style.zIndex = 101 * sorentoUI.modal.depth;
 		
 		_elements["content"] = SNDK.tools.newElement ("div", "", null, _elements["container"]);
 
 																		
 																						
 		_elements["shade"] = SNDK.tools.newElement ("div", "ModalWindowShade", _id + "_shade", document.documentElement);
-		_elements["shade"].style.zIndex = 100*sorentoUI.modalDepth;
+		_elements["shade"].style.zIndex = 100 * sorentoUI.modal.depth;
 		_elements["shade"].style.display = "none";
 
 		_elements["container"].style.display = "none";
@@ -62,7 +62,7 @@ window : function (_attributes)
 		SNDK.tools.changeOpacityByObject (_elements["container"], 0);								
 		SNDK.tools.changeOpacityByObject (_elements["shade"], 0);					
 	
-		sorentoUI.modalDepth++;
+		sorentoUI.modal.depth++;
 		_initialized = true;
 						
 		if (_attributes.SUIXML != null)
@@ -182,7 +182,8 @@ window : function (_attributes)
 			SNDK.animation.opacityFade (_elements["shade"], 65, 0, 300);
 		}
 
-		setTimeout (	function () 
+		setTimeout (	
+		function () 
 				{ 
 					_elements["container"].style.display = "none";	
 					_elements["shade"].style.display = "none";					
@@ -195,7 +196,7 @@ window : function (_attributes)
 	// ------------------------------------				
 	function dispose ()
 	{
-		sorentoUI.modalDepth--;
+		sorentoUI.modal.depth--;
 		
 		
 		if (_temp.controls > 0)
