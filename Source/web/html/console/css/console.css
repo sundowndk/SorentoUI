@@ -1,0 +1,38 @@
+
+html, body {
+height: 100%;
+margin: 0px;
+padding: 0px;
+
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+}
+
+
+.ui
+{	
+	height: 100%;
+}
+
+
+.Modal
+{
+	position:						absolute;	
+}
+
+
+.ModalWindowShade 
+{
+	position:						absolute;
+	
+	top: 							0px;
+	
+	background-color:					#000000;	
+	
+	cursor: wait;
+}
+
+
+.ModalBoxContent
+{
+
+}

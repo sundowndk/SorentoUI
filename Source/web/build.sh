@@ -12,21 +12,20 @@ OUTPUTDIR="$1"
 # CLEAN                                            #
 ####################################################
 echo "Cleaning previous build..."
-rm "$OUTPUTDIR/html/sorentoui/" -r
-#rm "$OUTPUTDIR/cgi-bin/Content/sorentoui/" -r
+rm "$OUTPUTDIR/html/console/" -r
 
 ####################################################
 # SETUP                                            #
 ####################################################
 echo "Setting up build structur..."
-mkdir "$OUTPUTDIR/html/sorentoui/"
-mkdir "$OUTPUTDIR/html/sorentoui/js"
+mkdir "$OUTPUTDIR/html/console/"
+mkdir "$OUTPUTDIR/html/console/js"
 
 ####################################################
 # JS                                               #
 ####################################################
 echo "Building JAVASCRIPT..."
-jsbuilder sorentoui.jsb "$OUTPUTDIR/html/sorentoui/js/"
+jsbuilder console.jsb "$OUTPUTDIR/html/console/js/"
 
 ####################################################
 # HTML                                             #
@@ -40,10 +39,10 @@ done
 ####################################################
 # CONTENT                                          #
 ####################################################
-#echo "Building CONTENT..."
-#for file in content/*; do
-#    cp -rv $file "$OUTPUTDIR/cgi-bin/Content/"
-#done
+echo "Building CONTENT..."
+for file in content/*; do
+    cp -rv $file "$OUTPUTDIR/cgi-bin/Content/"
+done
 
 
 

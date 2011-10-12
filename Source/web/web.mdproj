@@ -20,15 +20,30 @@
     <Folder Include="javascript\" />
     <Folder Include="javascript\modal\" />
     <Folder Include="html\" />
-    <Folder Include="html\sorentoui\" />
-    <Folder Include="html\sorentoui\css\" />
+    <Folder Include="content\" />
+    <Folder Include="content\console\" />
+    <Folder Include="html\console\" />
+    <Folder Include="html\console\css\" />
+    <Folder Include="html\console\xml\" />
+    <Folder Include="content\console\includes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="javascript\modal\window.js" />
     <None Include="javascript\modal\question.js" />
-    <None Include="sorentoui.jsb" />
     <None Include="build.sh" />
-    <None Include="html\sorentoui\css\sorentoui.css" />
     <None Include="javascript\modal\init.js" />
+    <None Include="content\console\includes\init.stpl" />
+    <None Include="content\console\includes\body.stpl" />
+    <None Include="content\console\includes\js.stpl" />
+    <None Include="content\console\includes\css.stpl" />
+    <None Include="content\console\login.stpl" />
+    <None Include="content\console\dashboard.stpl" />
+    <None Include="console.jsb" />
+    <None Include="html\console\css\console.css" />
+    <None Include="content\console\includes\header.stpl" />
+    <None Include="content\console\index.stpl" />
+    <None Include="html\console\xml\ui.xml" />
+    <None Include="html\console\xml\access.xml" />
+    <None Include="content\console\access.stpl" />
   </ItemGroup>
 </Project>

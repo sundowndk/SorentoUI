@@ -1,0 +1,24 @@
+<%Include ("/console/includes/init.stpl")%>
+
+<%title = "console _ access"%>
+<%contentxml = "xml/access.xml"%>
+
+<html>			
+	<%Include ($header)%>
+
+	<script language="JavaScript">			
+		UI.init = function ()
+		{			 				
+			SNDK.SUI.init ();
+		}
+			
+		UI.refresh = function ()
+		{			
+		}
+		
+		UI.init ();		
+	</script>
+
+	<%Include ($body)%>
+	
+</html>

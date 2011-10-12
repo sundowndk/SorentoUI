@@ -1,0 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<%path = "/console/"%>
+
+<%css = "/console/includes/css.stpl"%>
+<%js = "/console/includes/js.stpl"%>
+
+<%header = "/console/includes/header.stpl"%>
+<%body = "/console/includes/body.stpl"%>
+
+<%title = ""%>
+
+<%contentxml = ""%>
+
