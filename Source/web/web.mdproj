@@ -26,6 +26,8 @@
     <Folder Include="html\console\css\" />
     <Folder Include="html\console\xml\" />
     <Folder Include="content\console\includes\" />
+    <Folder Include="javascript\services\" />
+    <Folder Include="html\console\xml\access\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="javascript\modal\window.js" />
@@ -43,7 +45,18 @@
     <None Include="content\console\includes\header.stpl" />
     <None Include="content\console\index.stpl" />
     <None Include="html\console\xml\ui.xml" />
-    <None Include="html\console\xml\access.xml" />
     <None Include="content\console\access.stpl" />
+    <None Include="javascript\user.js" />
+    <None Include="javascript\usergroup.js" />
+    <None Include="javascript\media.js" />
+    <None Include="javascript\mediatransformation.js" />
+    <None Include="javascript\session.js" />
+    <None Include="javascript\services\config.js" />
+    <None Include="javascript\services\snapshot.js" />
+    <None Include="html\console\xml\access\users_create.xml" />
+    <None Include="html\console\xml\access\users_edit.xml" />
+    <None Include="html\console\xml\access\index.xml" />
+    <None Include="html\console\xml\access\usergroups_create.xml" />
+    <None Include="html\console\xml\access\usergroups_edit.xml" />
   </ItemGroup>
 </Project>
