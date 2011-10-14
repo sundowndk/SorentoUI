@@ -6,6 +6,8 @@
 					<js file="javascript/modal/init.js" />
 					<js file="javascript/modal/window.js" />
 					<js file="javascript/modal/question.js" />
+					<js file="javascript/modal/warning.js" />
+					<js file="javascript/modal/error.js" />
 				</class>			
 			</class>
 			<class name="user">

@@ -58,5 +58,7 @@
     <None Include="html\console\xml\access\index.xml" />
     <None Include="html\console\xml\access\usergroups_create.xml" />
     <None Include="html\console\xml\access\usergroups_edit.xml" />
+    <None Include="javascript\modal\warning.js" />
+    <None Include="javascript\modal\error.js" />
   </ItemGroup>
 </Project>

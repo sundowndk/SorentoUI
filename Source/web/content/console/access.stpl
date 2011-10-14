@@ -6,7 +6,167 @@
 <html>			
 	<%Include ($header)%>
 
-	<script language="JavaScript">			
+	<script language="JavaScript">					
+		// #######################################################################################################################################
+		// # USERS
+		// #######################################################################################################################################		
+		var users =
+		{
+			// ###################################################################################################################################
+			// # USERS.CREATE
+			// ###################################################################################################################################		
+			create : function ()
+			{
+				// CREATE			
+				var create =	function ()
+								{
+									var item = get ();
+									if (sorento.user.isEmailInUse (item["username"]))
+									{
+										sorento.console.modal.error ({text: "A user with username '"+ item["username"] +"' allready exists.", buttonLabel: "ok"});												
+									}
+									else if (sorento.user.isEmailInUse (item["email"]))
+									{
+										sorento.console.modal.error ({text: "A user with email '"+ item["email"] +"' allready exists.", buttonLabel: "ok"});												
+									}
+									else
+									{
+										item = sorento.user.create (item);	
+										
+										UI.modal.usersCreate.dispose ();
+										
+										users.edit (item);										
+									}																		
+								};			
+			
+				// REFRESH
+				var refresh =	function ()
+								{
+									if ((UI.modal.usersCreate.getUIElement ("username").getAttribute ("value") != "") && (UI.modal.usersCreate.getUIElement ("email").getAttribute ("value") != ""))
+									{
+										UI.modal.usersCreate.getUIElement ("create").setAttribute ("disabled", false);
+									}
+									else
+									{
+										UI.modal.usersCreate.getUIElement ("create").setAttribute ("disabled", true);
+									}										
+								};
+								
+				// GET
+				var get =		function ()
+								{
+									var item = new Array ();
+									item["username"] = UI.modal.usersCreate.getUIElement ("username").getAttribute ("value");
+									item["email"] = UI.modal.usersCreate.getUIElement ("email").getAttribute ("value");
+									return item;
+								};
+
+				// INIT
+				UI.modal.usersCreate = new sorento.console.modal.window ({SUIXML: "/console/xml/access/users_create.xml"});
+				UI.modal.usersCreate.show ();		
+								
+				UI.modal.usersCreate.getUIElement ("username").setAttribute ("onChange", refresh);
+				UI.modal.usersCreate.getUIElement ("email").setAttribute ("onChange", refresh);
+				
+				UI.modal.usersCreate.getUIElement ("create").setAttribute ("onClick", create);
+				UI.modal.usersCreate.getUIElement ("close").setAttribute ("onClick", UI.modal.usersCreate.dispose);		
+			},
+			
+			// ###################################################################################################################################
+			// # USERS.EDIT
+			// ###################################################################################################################################			
+			edit : function (item)
+			{
+				// SAVE
+				var save = 		function ()
+								{};
+						
+				// REFRESH		
+				var refresh =	function ()
+								{};
+							
+				// SET	
+				var set =		function ()
+								{};
+						
+				// GET		
+				var get = 		function ()
+								{};
+			
+				// INIT
+				UI.modal.usersCreate = new sorento.console.modal.window ({SUIXML: "/console/xml/access/users_edit.xml"});
+				UI.modal.usersCreate.show ();		
+								
+//				UI.modal.usersCreate.getUIElement ("username").setAttribute ("onChange", refresh);
+//				UI.modal.usersCreate.getUIElement ("email").setAttribute ("onChange", refresh);
+				
+//				UI.modal.usersEdit.getUIElement ("create").setAttribute ("onClick", create);
+//				UI.modal.usersEdit.getUIElement ("close").setAttribute ("onClick", UI.modal.usersEdit.dispose);		
+			},
+			
+			// ###################################################################################################################################
+			// # USERS.DELETE
+			// ###################################################################################################################################			
+			delete : function ()
+			{
+					
+			}				
+		}
+		
+		// #######################################################################################################################################
+		// # USERGROUPS
+		// #######################################################################################################################################		
+		var usergroups =
+		{
+			// ###################################################################################################################################
+			// # USERGROUPS.CREATE
+			// ###################################################################################################################################	
+			create : function ()
+			{
+				var modal = new sorento.console.modal.window ({SUIXML: "/console/xml/access/usergroups_create.xml"});
+				modal.show ();		
+			
+				var create =	function ()
+								{
+								};			
+			
+				var refresh =	function ()
+								{
+									if (modal.getUIElement ("name").getAttribute ("value") != "")
+									{
+										modal.getUIElement ("create").setAttribute ("disabled", false);
+									}
+									else
+									{
+										modal.getUIElement ("create").setAttribute ("disabled", true);
+									}										
+								};
+			
+				modal.getUIElement ("name").setAttribute ("onChange", refresh);
+				modal.getUIElement ("create").setAttribute ("onClick", create);
+				modal.getUIElement ("close").setAttribute ("onClick", modal.dispose);					
+			},
+		
+			// ###################################################################################################################################
+			// # USERGROUPS.EDIT
+			// ###################################################################################################################################		
+			edit :	function ()
+			{
+			
+			},
+			
+			// ###################################################################################################################################
+			// # USERGROUPS.DELETE
+			// ###################################################################################################################################			
+			delete : function ()
+			{
+			
+			}		
+		}		
+		
+		// ##########################################################################################################################################
+		// # UI
+		// ##########################################################################################################################################		
 		UI.init = 		function ()
 						{			
 							UI.elements.content.users.setAttribute ("onChange", UI.refresh);
@@ -55,85 +215,6 @@
 			 					UI.elements.content.usergroupsdelete.setAttribute ("disabled", true);
 			 				}			 				
 						};
-		
-		
-		var users =
-		{
-			create : function ()
-			{
-				var modal = new sorento.console.modal.window ({SUIXML: "/console/xml/access/users_create.xml"});
-				modal.show ();		
-			
-				var create =	function ()
-								{
-								};			
-			
-				var refresh =	function ()
-								{
-									if (modal.getUIElement ("name").getAttribute ("value") != "")
-									{
-										modal.getUIElement ("create").setAttribute ("disabled", false);
-									}
-									else
-									{
-										modal.getUIElement ("create").setAttribute ("disabled", true);
-									}										
-								};
-			
-				modal.getUIElement ("name").setAttribute ("onChange", refresh);
-				modal.getUIElement ("create").setAttribute ("onClick", create);
-				modal.getUIElement ("close").setAttribute ("onClick", modal.dispose);		
-			},
-			
-			edit : function ()
-			{
-			
-			},
-			
-			delete : function ()
-			{
-					
-			}				
-		}
-		
-		var usergroups =
-		{
-			create : function ()
-			{
-				var modal = new sorento.console.modal.window ({SUIXML: "/console/xml/access/usergroups_create.xml"});
-				modal.show ();		
-			
-				var create =	function ()
-								{
-								};			
-			
-				var refresh =	function ()
-								{
-									if (modal.getUIElement ("name").getAttribute ("value") != "")
-									{
-										modal.getUIElement ("create").setAttribute ("disabled", false);
-									}
-									else
-									{
-										modal.getUIElement ("create").setAttribute ("disabled", true);
-									}										
-								};
-			
-				modal.getUIElement ("name").setAttribute ("onChange", refresh);
-				modal.getUIElement ("create").setAttribute ("onClick", create);
-				modal.getUIElement ("close").setAttribute ("onClick", modal.dispose);					
-			},
-		
-			edit :	function ()
-			{
-			
-			},
-			
-			delete : function ()
-			{
-			
-			}		
-		}		
 		
 		UI.init ();		
 	</script>
