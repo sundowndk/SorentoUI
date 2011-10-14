@@ -60,5 +60,6 @@
     <None Include="html\console\xml\access\usergroups_edit.xml" />
     <None Include="javascript\modal\warning.js" />
     <None Include="javascript\modal\error.js" />
+    <None Include="javascript\helpers.js" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,22 @@
+create : function (_attributes)
+{
+	if (!_attributes["tag"]) _attributes["tag"] = SNDK.tools.newGuid ();
+
+	UI.modal[_attributes.tag] = new sorento.console.modal.window (_attributes);
+	
+},
+
+
 window : function (_attributes)
 {
 	// Init
 	var _initialized = false;
 	var _id = SNDK.tools.newGuid ();
 	var _elements = new Array ();
+	
+	
+	
+	
 	var _temp = 	{ controls: 0,
 			  tabs: 0,
 			  controlWidth: "533px",
@@ -14,6 +27,7 @@ window : function (_attributes)
 	var _valuehidden = true;
 
 	// Methods
+		
 	this.show = show;
 	this.hide = hide;	
 	this.dispose = dispose;
@@ -67,7 +81,8 @@ window : function (_attributes)
 						
 		if (_attributes.SUIXML != null)
 		{
-			_elements["ui"] = SNDK.SUI.builder.construct ({URL: _attributes.SUIXML, appendTo: _elements["content"] });					
+			_elements["ui"] = SNDK.SUI.builder.construct ({URL: _attributes.SUIXML, appendTo: _elements["content"] });	
+
 		}
 		
 		SNDK.SUI.init ();
@@ -220,7 +235,10 @@ window : function (_attributes)
 		setTimeout (	function () 
 				{ 
 					document.body.removeChild (_elements["container"]); 
-					document.documentElement.removeChild (_elements["shade"]); 								
+					document.documentElement.removeChild (_elements["shade"]); 		
+					
+					UI.modal[_attributes.tag] = null;						
+					
 				}, 602);
 	}
 	

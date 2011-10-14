@@ -32,7 +32,10 @@
 				<class name="snapshot">
 					<js file="javascript/services/snapshot.js" />
 				</class>
-			</class>										
+			</class>	
+			<class name="helpers">
+				<js file="javascript/helpers.js" />
+			</class>									
 		</class>
 	</project>	
 </solution>
