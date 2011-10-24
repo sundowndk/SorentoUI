@@ -44,7 +44,7 @@ list : function ()
 		
 	request.send ();
 											
-	return request.respons ()["users"];
+	return request.respons ()["sorentolib.users"];
 },
 
 isUsernameInUse : function (username, id)

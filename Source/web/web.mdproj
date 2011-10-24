@@ -61,5 +61,7 @@
     <None Include="javascript\modal\warning.js" />
     <None Include="javascript\modal\error.js" />
     <None Include="javascript\helpers.js" />
+    <None Include="html\console\debug\user.html" />
+    <None Include="html\console\debug\usergroup.html" />
   </ItemGroup>
 </Project>
