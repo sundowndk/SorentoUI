@@ -1,9 +1,9 @@
-create : function (usergroup)
+new : function (usergroup)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.Usergroup.New", "data", "POST", false);			
 	request.send (usergroup);
 	
-	return request.respons ();		
+	return request.respons ()["sorentolib.usergroup"];		
 },
 
 load : function (id)
@@ -21,7 +21,10 @@ load : function (id)
 save : function (usergroup)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.Usergroup.Save", "data", "POST", false);				
-	request.send (usergroup);		
+	
+	var content = new Array ();
+	content["sorentolib.usergroup"] = usergroup;
+	request.send (content);		
 	
 	return true;
 },
@@ -43,5 +46,5 @@ list : function ()
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.Usergroup.List", "data", "POST", false);					
 	request.send ();
 											
-	return request.respons ()["usergroups"];
+	return request.respons ()["sorentolib.usergroups"];
 }

@@ -9,8 +9,19 @@
 	</head>
 
 	<script language="JavaScript">
+		console.log ("SORENTOLIB.USERGROUP.NEW")
+		var usergroup = sorento.usergroup.new ();
+		
+		console.log (usergroup); 
+			
+		console.log ("SORENTOLIB.USERGROUP.SAVE")
+		usergroup.name = "TEST GROUP";
+		sorento.usergroup.save (usergroup);
+								
 		console.log ("SORENTOLIB.USERGROUP.LIST");
-		console.log (sorento.usergroup.list ());
+		var usergroups = sorento.usergroup.list ();
+		
+		
 		
 	</script>
 			

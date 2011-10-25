@@ -9,8 +9,13 @@
 	</head>
 
 	<script language="JavaScript">
-		console.log ("SORENTOLIB.USER.LIST");
-		console.log (sorento.user.list ());
+		console.log ("SORENTOLIB.USER.LIST");		
+		var users = sorento.user.list ();		
+		console.log (users);		
+		
+		console.log ("SORENTOLIB.USER.SAVE");				
+		users[0].realname = "Rasmus Pedersen"		
+		sorento.user.save (users[0]);
 		
 	</script>
 			

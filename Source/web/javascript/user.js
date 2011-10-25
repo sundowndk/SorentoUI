@@ -21,7 +21,11 @@ load : function (id)
 save : function (user)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.User.Save", "data", "POST", false);				
-	request.send (user);		
+	
+	var content = new Array ();
+	content["sorentolib.user"] = user;
+		
+	request.send (content);		
 	
 	return true;
 },
