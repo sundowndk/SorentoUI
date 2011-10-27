@@ -63,5 +63,6 @@
     <None Include="javascript\helpers.js" />
     <None Include="html\console\debug\user.html" />
     <None Include="html\console\debug\usergroup.html" />
+    <None Include="javascript\snapin.js" />
   </ItemGroup>
 </Project>

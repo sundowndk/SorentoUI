@@ -9,6 +9,9 @@
 					<js file="javascript/modal/warning.js" />
 					<js file="javascript/modal/error.js" />
 				</class>			
+				<class name="snapIn">
+					<js file="javascript/snapin.js" />
+				</class>				
 			</class>
 			<class name="user">
 				<js file="javascript/user.js" />
