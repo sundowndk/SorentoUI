@@ -28,6 +28,7 @@
     <Folder Include="content\console\includes\" />
     <Folder Include="javascript\services\" />
     <Folder Include="html\console\xml\access\" />
+    <Folder Include="html\console\xml\chooser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="javascript\modal\window.js" />
@@ -64,5 +65,8 @@
     <None Include="html\console\debug\user.html" />
     <None Include="html\console\debug\usergroup.html" />
     <None Include="javascript\snapin.js" />
+    <None Include="html\console\xml\chooser\usergroup.xml" />
+    <None Include="javascript\modal\chooser.js" />
+    <None Include="javascript\modal\usergroup_chooser.js" />
   </ItemGroup>
 </Project>

@@ -8,6 +8,8 @@
 					<js file="javascript/modal/question.js" />
 					<js file="javascript/modal/warning.js" />
 					<js file="javascript/modal/error.js" />
+					<js file="javascript/modal/chooser.js" />
+					<js file="javascript/modal/usergroup_chooser.js" />
 				</class>			
 				<class name="snapIn">
 					<js file="javascript/snapin.js" />

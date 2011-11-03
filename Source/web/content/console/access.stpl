@@ -77,6 +77,27 @@
 			// ###################################################################################################################################			
 			edit : function (item)
 			{
+				// ##################################################################################################################################
+				// # USERS.EDIT.USERGROUP
+				// ##################################################################################################################################
+				var usergroup =
+				{
+					// ##############################################################################################################################
+					// # USERS.EDIT.USERGROUP.ADD
+					// ##############################################################################################################################		
+					add : function ()
+					{
+						sorento.console.modal.usergroupChooser ();
+					},
+										
+					// ##############################################################################################################################
+					// # USERS.EDIT.USERGROUP.REMOVE
+					// ##############################################################################################################################		
+					remove : function ()
+					{
+					}				
+				}
+						
 				// SAVE
 				var save = 		function ()
 								{};
@@ -97,10 +118,13 @@
 				UI.modal.usersCreate = new sorento.console.modal.window ({SUIXML: "/console/xml/access/users_edit.xml"});
 				UI.modal.usersCreate.show ();		
 								
+				UI.modal.usersCreate.getUIElement ("usergroupsadd").setAttribute ("onClick", usergroup.add);
+				UI.modal.usersCreate.getUIElement ("usergroupsremove").setAttribute ("onClick", usergroup.remove);
+				
 //				UI.modal.usersCreate.getUIElement ("username").setAttribute ("onChange", refresh);
 //				UI.modal.usersCreate.getUIElement ("email").setAttribute ("onChange", refresh);
 				
-//				UI.modal.usersEdit.getUIElement ("create").setAttribute ("onClick", create);
+				UI.modal.usersEdit.getUIElement ("create").setA1ttribute ("onClick", create);
 //				UI.modal.usersEdit.getUIElement ("close").setAttribute ("onClick", UI.modal.usersEdit.dispose);		
 			},
 			
