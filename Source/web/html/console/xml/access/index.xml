@@ -9,6 +9,7 @@
 								<column tag="username" label="Username" width="200px" visible="true" />
 								<column tag="realname" label="Realname" width="200px" visible="true" />
 								<column tag="email" label="Email" width="200px" visible="true" />
+								<column tag="accesslevel" label="Accesslevel" width="200px" visible="true" />
 								<column tag="status" label="Status" width="200px" visible="true" />
 							</listview>
 						</panel>

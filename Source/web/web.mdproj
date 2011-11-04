@@ -29,6 +29,7 @@
     <Folder Include="javascript\services\" />
     <Folder Include="html\console\xml\access\" />
     <Folder Include="html\console\xml\chooser\" />
+    <Folder Include="javascript\modal\chooser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="javascript\modal\window.js" />
@@ -66,7 +67,8 @@
     <None Include="html\console\debug\usergroup.html" />
     <None Include="javascript\snapin.js" />
     <None Include="html\console\xml\chooser\usergroup.xml" />
-    <None Include="javascript\modal\chooser.js" />
-    <None Include="javascript\modal\usergroup_chooser.js" />
+    <None Include="javascript\modal\chooser\usergroup.js" />
+    <None Include="javascript\modal\chooser\base.js" />
+    <None Include="html\console\xml\access\users_edit_change_password.xml" />
   </ItemGroup>
 </Project>

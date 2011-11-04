@@ -43,8 +43,8 @@
 										</panel>					
 										<panel size="*">
 											<dropbox tag="status" width="100%">
-												<item label="Enabled" value="1" />
-												<item label="Disabled" value="2" />										
+												<item label="Enabled" value="Enabled" />
+												<item label="Disabled" value="Disabled" />										
 											</dropbox>
 										</panel>					
 									</layoutbox>
@@ -55,8 +55,7 @@
 						</tab>
 						<tab label="Security">
 							<layoutbox type="horizontal">			
-								<panel size="*">
-							
+								<panel size="*">										
 									<layoutbox type="vertical">
 										<panel size="100px">
 											<label text="Usergroups" />
@@ -70,10 +69,9 @@
 										</panel>					
 										<panel size="80px">
 											<button tag="usergroupsadd" stylesheet="SUIButtonSmall" width="100%" label="Add" />
-											<button tag="usergroupsremove" stylesheet="SUIButtonSmall" width="100%" label="Remove" />
+											<button tag="usergroupsremove" stylesheet="SUIButtonSmall" width="100%" label="Remove" disabled="true" />
 										</panel>
-									</layoutbox>														
-						
+									</layoutbox>																				
 								</panel>
 							</layoutbox>					
 						</tab>
@@ -81,11 +79,12 @@
 				</panel>
 				<panel size="60px">
 					<layoutbox type="vertical">
-						<panel size="*">
+						<panel size="*">	
+							<button tag="changepassword" label="Change password" width="150px" disabled="false"/>						
 						</panel>
 						<panel size="210px">
-							<button tag="create" label="Create" width="100px" disabled="true"/>
-						<button tag="close" label="Close" width="100px" />
+							<button tag="save" label="Save" width="100px" disabled="true"/>
+							<button tag="close" label="Close" width="100px" />
 						</panel>						
 					</layoutbox>
 				</panel>

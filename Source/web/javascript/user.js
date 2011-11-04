@@ -1,9 +1,13 @@
-create : function (user)
+create : function (username, email)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.User.New", "data", "POST", false);			
-	request.send (user);
 	
-	return request.respons ();		
+	var content = new Array ();
+	content["username"] = username;
+	content["email"] = email;
+	request.send (content);
+	
+	return request.respons ()["sorentolib.user"];		
 },
 
 load : function (id)
@@ -15,7 +19,7 @@ load : function (id)
 				
 	request.send (content);
 	
-	return request.respons ();
+	return request.respons ()["sorentolib.user"];
 },
 
 save : function (user)
