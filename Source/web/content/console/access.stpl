@@ -93,15 +93,6 @@
 					{
 						var onDone =	function (usergroup)
 										{
-											var usergroups = UI.modal.usersEdit.getUIElement ("usergroups").getItems ()
-											for (index in usergroups)
-											{
-												if (usergroups[index].id == usergroup.id)
-												{
-													return;
-												}
-											}
-										
 											UI.modal.usersEdit.getUIElement ("usergroups").addItem (usergroup);											
 										};
 					

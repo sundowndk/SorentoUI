@@ -61,7 +61,7 @@
 											<label text="Usergroups" />
 										</panel>
 										<panel size="*">
-											<listview tag="usergroups" width="100%" height="100%">
+											<listview tag="usergroups" width="100%" height="100%" unique="id">
 												<column tag="id" />
 												<column tag="name" label="Name" width="200px" visible="true" />
 												<column tag="accesslevel" label="AccessLevel" width="200px" visible="true" />
