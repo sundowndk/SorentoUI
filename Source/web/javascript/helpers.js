@@ -60,8 +60,11 @@ compareItems : function (options)
 			}
 			else if (defaults[key] != current[key])
 			{
+				if (defaults[key] != null)
+				{
 				console.log ("STRING:"+ path+"_"+key +" "+ defaults[key] +" != "+ current[key])							
 				return true;
+				}
 			}	
 		}	
 		else
