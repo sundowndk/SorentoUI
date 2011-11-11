@@ -14,7 +14,10 @@ window : function (_attributes)
 	var _id = SNDK.tools.newGuid ();
 	var _elements = new Array ();
 	
-	
+	if (_attributes.suiURL != null)
+	{
+		_attributes.SUIXML = _attributes.suiURL;
+	}
 	
 	
 	var _temp = 	{ controls: 0,
