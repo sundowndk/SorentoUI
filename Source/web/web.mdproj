@@ -30,6 +30,8 @@
     <Folder Include="html\console\xml\access\" />
     <Folder Include="html\console\xml\chooser\" />
     <Folder Include="javascript\modal\chooser\" />
+    <Folder Include="content\console\users\" />
+    <Folder Include="html\console\xml\users\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="javascript\modal\window.js" />
@@ -70,5 +72,13 @@
     <None Include="javascript\modal\chooser\usergroup.js" />
     <None Include="javascript\modal\chooser\base.js" />
     <None Include="html\console\xml\access\users_edit_change_password.xml" />
+    <None Include="content\console\users\index.stpl" />
+    <None Include="content\console\users\index_script.stpl" />
+    <None Include="html\console\xml\users\users.xml" />
+    <None Include="html\console\xml\users\usergroups_create.xml" />
+    <None Include="html\console\xml\users\usergroups_edit.xml" />
+    <None Include="html\console\xml\users\users_create.xml" />
+    <None Include="html\console\xml\users\users_edit.xml" />
+    <None Include="html\console\xml\users\users_edit_change_password.xml" />
   </ItemGroup>
 </Project>

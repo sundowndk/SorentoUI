@@ -34,7 +34,7 @@ save : function (user)
 	return true;
 },
 
-remove : function (id)
+delete : function (id)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.User.Delete", "data", "POST", false);	
 	
@@ -68,12 +68,7 @@ isUsernameInUse : function (username, id)
 	
 	request.send (content);
 
-	if (request.respons ()["result"] == "true")
-	{
-		return true;
-	}			
-
-	return false;
+ 	return request.respons ()["result"];
 },
 
 isEmailInUse : function (email, id)
@@ -90,10 +85,5 @@ isEmailInUse : function (email, id)
 
 	request.send (content);
 
-	if (request.respons ()["result"] == "true")
-	{
-		return true;
-	}			
-
-	return false;
+	return request.respons ()["result"];
 }		

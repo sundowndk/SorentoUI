@@ -17,6 +17,8 @@ padding: 0px;
 .Modal
 {
 	position:						absolute;	
+	
+	
 }
 
 
@@ -26,7 +28,7 @@ padding: 0px;
 	
 	top: 							0px;
 	
-	background-color:					#ffffff;	
+	background-color:					#000;	
 	
 	cursor: wait;
 }
