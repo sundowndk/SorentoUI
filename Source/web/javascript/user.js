@@ -55,6 +55,23 @@ list : function ()
 	return request.respons ()["sorentolib.users"];
 },
 
+changePassword : function (userid, newPassword, oldPassword)
+{
+	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.User.ChangePassword", "data", "POST", false);
+	
+	var content = new Array ();
+	content["userid"] = userid;
+	content["newpassword"] = newPassword;
+	if (oldPassword != null)
+	{
+		content["oldpassword"] = oldPassword;
+	}
+	
+	request.send (content);				
+	
+	return true;	
+},
+
 isUsernameInUse : function (username, id)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.User.IsUsernameInUse", "data", "POST", false);	

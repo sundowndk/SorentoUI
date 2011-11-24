@@ -1,8 +1,7 @@
-
 <sui elementheight="50px">
 	<canvas width="600px" height="230px" canScroll="false">	
 		<container title="Create new user" icon="Icon32Edit" stylesheet="SUIContainerModal">
-			<layoutbox type="horizontal">			
+			<layoutbox type="horizontal" stylesheet="LayoutboxNoborder">			
 				<panel size="%elementheight%">
 					<layoutbox type="vertical">
 						<panel size="100px">
@@ -25,7 +24,7 @@
 				</panel>
 				<panel size="*">
 				</panel>
-				<panel size="60px">
+				<panel size="45px">
 					<layoutbox type="vertical">
 						<panel size="*">
 						</panel>

@@ -15,7 +15,7 @@ load : function (id)
 				
 	request.send (content);
 	
-	return request.respons ();
+	return request.respons ()["sorentolib.usergroup"];
 },
 
 save : function (usergroup)
@@ -29,7 +29,7 @@ save : function (usergroup)
 	return true;
 },
 
-remove : function (id)
+delete : function (id)
 {
 	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.Usergroup.Delete", "data", "POST", false);	
 	
@@ -47,4 +47,12 @@ list : function ()
 	request.send ();
 											
 	return request.respons ()["sorentolib.usergroups"];
+},
+
+accesslevels : function ()
+{
+	var request = new SNDK.ajax.request ("/", "cmd=Ajax;cmd.function=SorentoLib.Usergroup.Accesslevels", "data", "POST", false);					
+	request.send ();
+																													
+	return request.respons ()["sorentolib.enums.accesslevels"];
 }

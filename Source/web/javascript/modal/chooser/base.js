@@ -52,7 +52,7 @@ base : function (attributes)
 		_temp.modal = new sorento.console.modal.window (_attributes);		
 	
 		var canvas = new SNDK.SUI.canvas ({appendTo: _temp.modal.getContentElement (), width: "800px", height: "400px"});
-		var container = new SNDK.SUI.container ({title: _attributes.title});
+		var container = new SNDK.SUI.container ({title: _attributes.title, stylesheet: "SUIContainerModal"});
 		
 		var layoutbox1 = new SNDK.SUI.layoutbox ({type: "horizontal"});
 		layoutbox1.addPanel ({tag: "panel1", size: "*"});
