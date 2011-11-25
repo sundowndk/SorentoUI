@@ -14,18 +14,7 @@
 								</panel>					
 							</layoutbox>
 						</panel>
-						<panel size="%elementheight%">
-							<layoutbox type="vertical">
-								<panel size="100px">
-									<label text="Accesslevel"/>
-								</panel>					
-								<panel size="*">
-									<dropbox tag="accesslevel" width="100%">
-									</dropbox>
-								</panel>					
-							</layoutbox>
-						</panel>
-						<panel size="180px">
+						<panel size="*">
 							<layoutbox type="vertical">
 								<panel size="100px">
 									<label text="Members"/>
@@ -38,10 +27,7 @@
 									</listview>								
 								</panel>					
 							</layoutbox>
-						</panel>
-						
-						<panel size="*">
-						</panel>
+						</panel>						
 					</layoutbox>
 				</panel>
 				<panel size="45px">

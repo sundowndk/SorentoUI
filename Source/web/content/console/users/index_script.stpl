@@ -25,11 +25,14 @@
 								}
 								else
 								{
-									item = sorento.user.create (item["username"], item["email"]);																					
+									item = sorento.user.create (item["username"], item["email"]);
+									sorento.user.save (item);
+																											
+									users.edit (item, "new");			
+									
+									UI.elements.content.users.addItem (sorento.user.load (item["id"]));
 									
 									UI.modal.usersCreate.dispose ();
-									
-									users.edit (item, "new");										
 								}																		
 							};			
 		
@@ -150,13 +153,7 @@
 								sorento.user.save (item);
 								
 								switch (Mode)
-								{
-									case "new":
-									{																																																						
-										UI.elements.content.users.addItem (sorento.user.load (item["id"]));
-										break;
-									}
-										
+								{										
 									case "edit":
 									{
 										UI.elements.content.users.setItem (sorento.user.load (item["id"]));
@@ -243,18 +240,18 @@
 		// ###################################################################################################################################			
 		delete : function ()
 		{
-				var action =	function (result)
+			var action =	function (result)
+							{
+								if (result == 1)
 								{
-									if (result == 1)
+									if (sorento.user.delete (UI.elements.content.users.getItem ()["id"]))
 									{
-										if (sorento.user.delete (UI.elements.content.users.getItem ()["id"]))
-										{
-											UI.elements.content.users.removeItem ();
-										}										
-									}
-								};
+										UI.elements.content.users.removeItem ();
+									}										
+								}
+							};
 		
-				sorento.console.modal.question ({title: "Delete user", text: "Do you really want to delete this user ?", buttonLabel: "Yes|No", onDone: action});				
+			sorento.console.modal.question ({title: "Delete user", text: "Do you really want to delete this user ?", buttonLabel: "Yes|No", onDone: action});				
 		}				
 	}
 	
@@ -300,9 +297,7 @@
 										break;
 									}
 								}									
-																	
-								
-																	
+																																										
 								UI.modal.usergroupsEdit.dispose ();		
 							};
 					
@@ -323,7 +318,6 @@
 			var set =		function ()
 							{
 								UI.modal.usergroupsEdit.getUIElement ("name").setAttribute ("value", Item["name"]);
-								UI.modal.usergroupsEdit.getUIElement ("accesslevel").setAttribute ("selectedItemByValue", Item["accesslevel"]);
 							};
 					
 			// GET		
@@ -332,7 +326,6 @@
 								var item = {};
 								item["id"] = Item["id"];								
 								item["name"] = UI.modal.usergroupsEdit.getUIElement ("name").getAttribute ("value");
-								item["accesslevel"] = UI.modal.usergroupsEdit.getUIElement ("accesslevel").getAttribute ("selectedItem").value;
 								return item;								
 							};
 		
@@ -340,15 +333,7 @@
 			UI.modal.usergroupsEdit = new sorento.console.modal.window ({SUIXML: "/console/xml/users/usergroups_edit.xml"});
 													
 			UI.modal.usergroupsEdit.getUIElement ("name").setAttribute ("onChange", onChange);
-			UI.modal.usergroupsEdit.getUIElement ("accesslevel").setAttribute ("onChange", onChange);	
-
-			var accesslevels = sorento.usergroup.accesslevels ();
-			
-			for (index in accesslevels)
-			{
-				UI.modal.usergroupsEdit.getUIElement ("accesslevel").addItem ({label: accesslevels[index].value, value: accesslevels[index].value});
-			}
-						
+									
 			UI.modal.usergroupsEdit.getUIElement ("save").setAttribute ("onClick", save);
 			UI.modal.usergroupsEdit.getUIElement ("close").setAttribute ("onClick", UI.modal.usergroupsEdit.dispose);		
 			
@@ -375,7 +360,7 @@
 								}
 							};
 		
-				sorento.console.modal.question ({title: "Delete usergroup", text: "Do you really want to delete this usergroup ?", buttonLabel: "Yes|No", onDone: action});	
+			sorento.console.modal.question ({title: "Delete usergroup", text: "Do you really want to delete this usergroup ?", buttonLabel: "Yes|No", onDone: action});	
 		}		
 	}		
 	
