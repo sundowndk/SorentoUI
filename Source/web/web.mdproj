@@ -80,5 +80,6 @@
     <None Include="html\console\xml\users\users_create.xml" />
     <None Include="html\console\xml\users\users_edit.xml" />
     <None Include="html\console\xml\users\users_edit_change_password.xml" />
+    <None Include="content\console\includes\meta.stpl" />
   </ItemGroup>
 </Project>

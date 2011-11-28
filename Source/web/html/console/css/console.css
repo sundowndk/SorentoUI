@@ -5,6 +5,8 @@ margin: 0px;
 padding: 0px;
 
 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+
+font-family: 					Helvetica;
 }
 
 
@@ -14,27 +16,102 @@ padding: 0px;
 }
 
 
+/* --------------------------------------------------------------------------------------------------------------
+Modal
+-------------------------------------------------------------------------------------------------------------- */
 .Modal
 {
-	position:						absolute;	
-	
-	
+	position:					absolute;	
 }
 
 
 .ModalWindowShade 
 {
-	position:						absolute;
+	position:					absolute;
 	
-	top: 							0px;
+	top: 						0px;
 	
-	background-color:					#000;	
+	background-color:			#000;	
 	
-	cursor: wait;
+	cursor: 					wait;
 }
 
 
 .ModalBoxContent
 {
-
 }
+
+
+/* --------------------------------------------------------------------------------------------------------------
+SimplaMenu
+-------------------------------------------------------------------------------------------------------------- */
+.SimplaMenu
+{
+	width:						230px;
+	height: 					100%;				
+}
+
+.SimplaMenu .Category
+{
+	float: 						right;
+	
+	margin-bottom: 				10px;
+	
+	width: 						206px;
+	height: 					33px;
+	overflow:					hidden;
+
+	background: 				url('images/category2.png') no-repeat;
+		
+	text-align: 				right;	
+	color: 						#fff;
+		
+	cursor: 					pointer;
+}
+
+.SimplaMenu .CategorySelected
+{
+	background: 				url('images/category2.gif') no-repeat;
+	
+	font-weight: 				bold;
+	color:						#333;
+}
+
+.SimplaMenu .Item
+{
+	padding-top: 				5px;
+	padding-bottom: 			5px;
+	padding-right: 				15px;
+
+	height:						15px;
+
+	font-size: 					13px;
+	font-weight: 				normal;
+	line-height: 				14px;
+	color:						#bbb;
+}
+
+.SimplaMenu .Item:hover
+{
+	color:						#eee;
+}
+
+
+.SimplaMenu .ItemSelected
+{
+	background: 				url('images/current.gif') no-repeat scroll right center transparent !important;
+
+	font-weight: 				bold;
+	color:				 		#fff;
+}
+
+.SimplaMenu .Text
+{
+	padding-top:				8px;
+	padding-right: 				15px;	
+	
+	height:						25px;
+	
+	font-size: 					14px;
+}	
+
